@@ -1,0 +1,83 @@
+/* Nura 2.2 Learning Centre */
+.learning-page{max-width:1320px}
+.learning-hero{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px}
+.learning-hero h1{font:800 clamp(32px,3.6vw,43px)/1.12 'Manrope',sans-serif;letter-spacing:-1.7px;color:var(--purple);margin:0}
+.learning-hero-mark{width:112px;height:104px;flex:0 0 112px;border-radius:28px;background:linear-gradient(145deg,#eee7f7,#fbf8f1);display:grid;place-items:center;position:relative;overflow:hidden}
+.learning-hero-mark span{font-size:42px;color:#725596;z-index:1}
+.learning-hero-mark i,.learning-hero-mark b{position:absolute;border:1px solid #cbbbdc;border-radius:50%;width:85px;height:42px;transform:rotate(35deg)}
+.learning-hero-mark b{width:54px;height:90px;transform:rotate(-35deg)}
+.learning-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:17px}
+.learning-stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 17px;min-width:0}
+.learning-stat strong{display:block;font:800 27px 'Manrope',sans-serif;color:var(--purple);margin:5px 0 2px}
+.learning-stat>small{font-size:10px;color:#9b93a5}
+.learning-stat .stat-label{font-size:8px;letter-spacing:1.2px}
+.learning-stat.xp-stat{background:linear-gradient(135deg,#fff,#f5f0fb);border-color:#e5d9f0}
+.xp-stat strong small{display:inline;font:700 11px 'DM Sans',sans-serif;color:#8c75a9}
+.learning-layout{display:grid;grid-template-columns:.88fr 1.12fr;gap:15px;align-items:start}
+.learning-layout .panel{min-width:0}
+.deck-create-form{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}
+.deck-create-form input,.selected-deck-row select,.card-create-form textarea,.notes-input{width:100%;border:1px solid #e8e2ed;border-radius:10px;background:#fff;padding:11px 12px;font:12px 'DM Sans',sans-serif;color:var(--ink);outline:none}
+.deck-create-form input:focus,.selected-deck-row select:focus,.card-create-form textarea:focus,.notes-input:focus{border-color:#9b85bd;box-shadow:0 0 0 3px #eee8f7}
+.deck-create-form button{grid-column:1/-1;justify-self:start}
+.deck-list{display:grid;gap:8px;margin-top:13px}
+.deck-item{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #f0edf3;border-radius:12px;cursor:pointer;transition:.2s}
+.deck-item:hover,.deck-item.selected{border-color:#d9cce8;background:#faf8fd}
+.deck-select{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:0;background:transparent;padding:0;cursor:pointer;color:inherit;min-width:0}
+.deck-symbol{width:34px;height:34px;flex:0 0 34px;border-radius:10px;background:#f0eafa;color:#60488b;display:grid;place-items:center}
+.deck-copy{min-width:0;flex:1}
+.deck-copy strong{display:block;font:700 12px 'Manrope',sans-serif;color:var(--purple);overflow-wrap:anywhere}
+.deck-copy small{display:block;font-size:10px;color:#948b9f;margin-top:3px}
+.deck-delete{border:0;background:transparent;color:#a49aaa;font-size:17px;cursor:pointer;padding:5px}
+.selected-deck-row{display:flex;align-items:center;gap:12px;margin:13px 0 14px}
+.selected-deck-row label{font-size:10px;font-weight:700;color:#82798f;white-space:nowrap}
+.selected-deck-row select{max-width:260px;padding:9px 11px}
+.create-tabs,.practice-mode-tabs{display:flex;gap:5px;background:#f7f4f9;padding:4px;border-radius:11px;width:max-content;max-width:100%}
+.create-tab,.mode-tab{border:0;border-radius:8px;background:transparent;color:#8b8298;padding:9px 13px;font:700 10px 'DM Sans',sans-serif;cursor:pointer}
+.create-tab.active,.mode-tab.active{background:#fff;color:var(--purple);box-shadow:0 2px 7px #24124412}
+.create-pane{padding-top:15px}
+.card-create-form{display:grid;gap:11px}
+.card-create-form label,.notes-label{display:grid;gap:6px;font-size:10px;font-weight:700;color:#776c88}
+.card-create-form textarea{resize:vertical;line-height:1.6}
+.card-create-form button{justify-self:start}
+.note-format-help{background:#faf8fc;border:1px solid #eee8f4;border-radius:11px;padding:12px;margin-bottom:12px}
+.note-format-help strong{font:700 11px 'Manrope',sans-serif;color:var(--purple)}
+.note-format-help p{font-size:10px;line-height:1.6;color:#81798e;margin:5px 0 9px}
+.note-format-help code{display:block;font-size:10px;color:#60488b;background:#f0eafa;border-radius:6px;padding:7px;margin-top:5px;white-space:normal}
+.notes-input{resize:vertical;display:block;margin:6px 0 10px;line-height:1.65}
+.local-note{font-size:9px;color:#988fa1;line-height:1.5;margin:9px 0 0}
+.inline-message{font-size:10px;color:#4d805e;margin-top:8px;min-height:14px}
+.practice-panel{margin-top:16px}
+.practice-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:14px}
+.practice-heading h2{font:700 19px 'Manrope',sans-serif;color:var(--purple);margin:0}
+.practice-heading .panel-description{margin:6px 0 0}
+.practice-mode-tabs{flex-shrink:0}
+.practice-empty{border:1px dashed #ded5e8;background:#fbf9fc;border-radius:14px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px}
+.practice-empty>span{font-size:25px;color:#8a70ac;margin-bottom:8px}
+.practice-empty strong{font:700 14px 'Manrope',sans-serif;color:var(--purple)}
+.practice-empty p{font-size:11px;color:#8c8397;margin:6px 0 0;line-height:1.6}
+.review-toolbar,.quiz-topline{display:flex;justify-content:space-between;align-items:center;color:#8d829d;font-size:10px;font-weight:700;margin:5px 0 12px}
+.flashcard{width:100%;min-height:245px;border:1px solid #e6deef;border-radius:18px;background:linear-gradient(145deg,#fff 55%,#f6f1fb);padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;box-shadow:0 9px 25px #24124408;transition:transform .2s,border-color .2s}
+.flashcard:hover{border-color:#cfc0e1;transform:translateY(-2px)}
+.flashcard.is-back{background:linear-gradient(145deg,#f4effa,#fff);border-color:#cfc0e1}
+.flashcard-kicker{font-size:9px;letter-spacing:1.7px;color:#998bac;font-weight:700;margin-bottom:17px}
+.flashcard strong{font:700 clamp(18px,2.2vw,25px)/1.5 'Manrope',sans-serif;color:var(--purple);max-width:700px;white-space:pre-wrap}
+.flashcard-hint{font-size:10px;color:#988fa1;margin-top:20px}
+.review-actions{text-align:center;margin:16px 0 8px}
+.review-actions>span{display:block;color:#8d829d;font-size:10px;margin-bottom:9px}
+.review-actions>div{display:flex;justify-content:center;gap:8px}
+.rate-button{border:1px solid #e8e2ed;background:#fff;border-radius:9px;padding:10px 17px;font:700 10px 'DM Sans',sans-serif;cursor:pointer}
+.rate-button.again{color:#a15b66}.rate-button.good{color:#70559a}.rate-button.easy{color:#4e8667}
+.review-navigation{display:flex;justify-content:space-between;margin-top:14px}
+.quiz-question{font:700 20px/1.5 'Manrope',sans-serif;color:var(--purple);padding:13px 0 17px}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.quiz-option{border:1px solid #e8e2ed;background:#fff;border-radius:11px;padding:13px;text-align:left;font:600 11px/1.5 'DM Sans',sans-serif;color:#514760;cursor:pointer}
+.quiz-option:hover:not(:disabled){border-color:#b9a7d0;background:#faf8fd}
+.quiz-option.correct{border-color:#a7c9b1;background:#f0f7f1;color:#426e4e}
+.quiz-option.incorrect{border-color:#e0b5ba;background:#fbf1f2;color:#99505a}
+.quiz-option:disabled{cursor:default}
+.quiz-feedback{min-height:24px;font-size:11px;color:#6e6380;margin-top:12px;line-height:1.6}
+.quiz-footer{display:flex;justify-content:space-between;gap:10px;margin-top:12px}
+.quiz-footer button:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:1050px){.learning-layout{grid-template-columns:1fr}.learning-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.learning-hero{align-items:flex-start}.learning-hero-mark{width:76px;height:76px;flex-basis:76px;border-radius:21px}.learning-hero-mark span{font-size:30px}.learning-hero-mark i{width:62px}.learning-hero-mark b{height:65px}.practice-heading{flex-direction:column}.quiz-options{grid-template-columns:1fr}.learning-stat{padding:13px}.learning-stat strong{font-size:24px}}
+@media(max-width:460px){.learning-hero-mark{display:none}.deck-create-form{grid-template-columns:1fr}.selected-deck-row{align-items:flex-start;flex-direction:column;gap:6px}.selected-deck-row select{max-width:none}.review-actions>div{gap:5px}.rate-button{padding:9px 12px}}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#140040">
+  <meta name="description" content="Create flashcards, revise with active recall and quiz yourself in Nura's Learning Centre.">
+  <title>Learning centre | Nura</title>
+  <link rel="stylesheet" href="CSS/nura2.css">
+  <link rel="stylesheet" href="CSS/learning-centre.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html" aria-label="Nura overview"><span class="brand-mark">n</span><span><strong>Nura</strong><small>LEARN. FOCUS. GROW.</small></span></a>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav class="side-nav" aria-label="Workspace navigation">
+      <a class="side-link" href="index.html"><span class="nav-icon">⌂</span>Overview</a>
+      <a class="side-link" href="dashboard.html"><span class="nav-icon">▦</span>Assignments &amp; focus</a>
+    </nav>
+    <div class="sidebar-label">YOUR TOOLS</div>
+    <nav class="side-nav" aria-label="Productivity tools">
+      <a class="side-link" href="planner.html"><span class="nav-icon">▦</span>Weekly planner</a>
+      <a class="side-link" href="goals-progress.html"><span class="nav-icon">✧</span>Goals &amp; progress</a>
+    </nav>
+    <div class="sidebar-label">LEARNING</div>
+    <nav class="side-nav" aria-label="Learning navigation">
+      <a class="side-link active" href="learning-centre.html"><span class="nav-icon">✦</span>Learning centre</a>
+      <a class="side-link" href="resources.html"><span class="nav-icon">▤</span>Resource library</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="sidebar-note"><span class="note-spark">✦</span><strong>Small steps count.</strong><p>Learn a little, remember a little more.</p></div><div class="sidebar-meta"><span>NURA 2.2</span><a href="Pages/about.html">About Nura</a></div></div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="breadcrumb">Nura <span>/</span> Learning centre</div><div class="topbar-right"><span class="status-dot"></span><span>Saved on this device</span><div class="avatar">N</div></div></header>
+    <section class="page-content learning-page">
+      <div class="learning-hero">
+        <div><p class="eyebrow">LEARN ACTIVELY · REMEMBER MORE</p><h1>Your learning centre</h1><p class="intro">Build your own study decks, turn structured notes into flashcards and practise with quick quizzes.</p></div>
+        <div class="learning-hero-mark" aria-hidden="true"><span>✦</span><i></i><b></b></div>
+      </div>
+      <div class="learning-stats">
+        <div class="learning-stat"><span class="stat-label">YOUR DECKS</span><strong id="deckCount">0</strong><small>Collections you've created</small></div>
+        <div class="learning-stat"><span class="stat-label">FLASHCARDS</span><strong id="cardCount">0</strong><small>Ideas ready to revise</small></div>
+        <div class="learning-stat"><span class="stat-label">CARDS MASTERED</span><strong id="masteredCount">0</strong><small>Rated easy during review</small></div>
+        <div class="learning-stat xp-stat"><span class="stat-label">LEARNING XP</span><strong id="xpCount">0 <small>XP</small></strong><small>Earned through practice</small></div>
+      </div>
+
+      <div class="learning-layout">
+        <section class="panel deck-panel">
+          <div class="panel-heading"><div><p class="eyebrow">YOUR COLLECTIONS</p><h2>Study decks</h2></div><span class="panel-icon">▤</span></div>
+          <p class="panel-description">Create a deck for each subject, topic or upcoming assessment.</p>
+          <form id="deckForm" class="deck-create-form">
+            <label class="sr-only" for="deckName">Deck name</label><input id="deckName" maxlength="60" placeholder="e.g. Year 9 Biology" required>
+            <label class="sr-only" for="deckSubject">Subject</label><input id="deckSubject" maxlength="40" placeholder="Subject (optional)">
+            <button class="primary-button" type="submit">Create deck <span>＋</span></button>
+          </form>
+          <div id="deckList" class="deck-list" aria-live="polite"><p class="empty-state">No decks yet. Create your first one to begin.</p></div>
+        </section>
+
+        <section class="panel create-panel">
+          <div class="panel-heading"><div><p class="eyebrow">MAKE YOUR OWN MATERIALS</p><h2>Add to your deck</h2></div><span class="panel-icon">✧</span></div>
+          <p class="panel-description">Choose a deck, then add cards manually or format your notes to create a set of cards.</p>
+          <div class="selected-deck-row"><label for="activeDeck">Selected deck</label><select id="activeDeck"><option value="">Create a deck first</option></select></div>
+          <div class="create-tabs" role="tablist" aria-label="Choose how to create flashcards">
+            <button type="button" class="create-tab active" data-tab="manual" role="tab" aria-selected="true">Manual cards</button>
+            <button type="button" class="create-tab" data-tab="notes" role="tab" aria-selected="false">Paste notes</button>
+          </div>
+          <section class="create-pane active" id="manualPane" role="tabpanel">
+            <form id="cardForm" class="card-create-form">
+              <label>Front <textarea id="cardFront" rows="2" maxlength="500" placeholder="Write a question or key term..." required></textarea></label>
+              <label>Back <textarea id="cardBack" rows="3" maxlength="1200" placeholder="Write the answer or explanation..." required></textarea></label>
+              <button class="primary-button" type="submit">Add flashcard <span>＋</span></button>
+            </form>
+          </section>
+          <section class="create-pane" id="notesPane" role="tabpanel" hidden>
+            <div class="note-format-help"><strong>Quick note format</strong><p>Put one card on each line, with the prompt and answer separated by a colon or an arrow.</p><code>Photosynthesis: The process plants use to make glucose</code><code>What is a cell? - The basic unit of life</code></div>
+            <label class="notes-label" for="notesInput">Paste your notes</label>
+            <textarea id="notesInput" class="notes-input" rows="7" placeholder="Photosynthesis: The process plants use to make glucose&#10;What is a cell? - The basic unit of life"></textarea>
+            <button class="primary-button" id="generateCards" type="button">Create flashcards from notes <span>✦</span></button>
+            <p class="local-note">This first version uses a local note formatter, not AI. Your notes stay in this browser.</p>
+            <div id="importMessage" class="inline-message" aria-live="polite"></div>
+          </section>
+        </section>
+      </div>
+
+      <section class="panel practice-panel">
+        <div class="practice-heading"><div><p class="eyebrow">PRACTISE & STRENGTHEN YOUR MEMORY</p><h2>Study your cards</h2><p class="panel-description">Choose a deck and switch between flashcard review and a quick quiz.</p></div><div class="practice-mode-tabs" role="tablist" aria-label="Practice mode"><button type="button" class="mode-tab active" data-mode="review">Flashcards</button><button type="button" class="mode-tab" data-mode="quiz">Quick quiz</button></div></div>
+        <div class="practice-empty" id="practiceEmpty"><span>✧</span><strong>Your study space is ready</strong><p>Create a deck and add at least one flashcard to start practising.</p></div>
+        <div id="reviewMode" class="practice-mode" hidden>
+          <div class="review-toolbar"><span id="reviewDeckLabel">Your deck</span><span id="reviewCounter">Card 1 of 1</span></div>
+          <button type="button" class="flashcard" id="flashcard" aria-label="Reveal flashcard answer">
+            <span class="flashcard-kicker" id="flashcardKicker">QUESTION</span><strong id="flashcardText">Your question will appear here</strong><span class="flashcard-hint" id="flashcardHint">Click to reveal answer</span>
+          </button>
+          <div class="review-actions" id="reviewActions" hidden><span>How well did you know it?</span><div><button type="button" class="rate-button again" data-rating="again">Again</button><button type="button" class="rate-button good" data-rating="good">Good</button><button type="button" class="rate-button easy" data-rating="easy">Easy</button></div></div>
+          <div class="review-navigation"><button type="button" class="secondary-button" id="previousCard">← Previous</button><button type="button" class="secondary-button" id="nextCard">Next →</button></div>
+        </div>
+        <div id="quizMode" class="practice-mode" hidden>
+          <div class="quiz-topline"><span id="quizProgress">Question 1</span><span id="quizScore">0 correct</span></div>
+          <div class="quiz-question" id="quizQuestion">Your quiz question will appear here.</div>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div>
+          <div class="quiz-footer"><button type="button" class="secondary-button" id="restartQuiz">Restart quiz</button><button type="button" class="primary-button" id="nextQuestion" disabled>Next question →</button></div>
+        </div>
+      </section>
+      <footer class="page-footer">Nura <span>·</span> Learn. Focus. Grow. <span class="footer-right">Your progress, at your pace.</span></footer>
+    </section>
+  </main>
+</div>
+<script src="JS/storage.js"></script>
+<script src="JS/learning-centre.js"></script>
+</body></html>

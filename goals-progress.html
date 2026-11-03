@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#140040"><meta name="description" content="Goals & progress in Nura, your student learning and productivity space.">
+  <title>Goals & progress | Nura</title><link rel="stylesheet" href="CSS/nura2.css">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="Nura overview"><span class="brand-mark">n</span><span><strong>Nura</strong><small>LEARN. FOCUS. GROW.</small></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Workspace navigation">
+        <a class="side-link" href="index.html"><span class="nav-icon" aria-hidden="true">⌂</span>Overview</a>
+        <a class="side-link" href="dashboard.html"><span class="nav-icon" aria-hidden="true">▦</span>Assignments &amp; focus</a>
+      </nav>
+      <div class="sidebar-label">YOUR TOOLS</div>
+      <nav class="side-nav" aria-label="Productivity tools">
+        <a class="side-link " href="planner.html"><span class="nav-icon" aria-hidden="true">▦</span>Weekly planner</a>
+        <a class="side-link active" href="goals-progress.html"><span class="nav-icon" aria-hidden="true">✧</span>Goals &amp; progress</a>
+      </nav>
+      <div class="sidebar-label">LEARNING</div><nav class="side-nav" aria-label="Learning navigation"><a class="side-link" href="learning-centre.html"><span class="nav-icon" aria-hidden="true">✦</span>Learning centre</a><a class="side-link" href="resources.html"><span class="nav-icon" aria-hidden="true">▤</span>Resource library</a></nav>
+      <div class="sidebar-bottom"><div class="sidebar-note"><span class="note-spark">✦</span><strong>Small steps count.</strong><p>Progress happens one study session at a time.</p></div><div class="sidebar-meta"><span>NURA 2.1</span><a href="Pages/about.html">About Nura</a></div></div>
+    </aside>
+  <main class="main-area">
+    <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="breadcrumb">Nura <span>/</span> Goals & progress</div><div class="topbar-right"><span class="status-dot"></span><span>Saved on this device</span><div class="avatar">N</div></div></header>
+    <section class="page-content">
+
+      <div class="content-heading"><p class="eyebrow">NOTICE YOUR PROGRESS</p><h1>Goals &amp; progress</h1><p class="intro">Set a realistic weekly target, then celebrate the study sessions and tasks you complete.</p></div>
+      <div class="goals-progress-layout">
+        <section class="panel goals-panel" id="goals">
+          <div class="panel-heading"><div><p class="eyebrow">AIM FOR WHAT'S REALISTIC</p><h2>Weekly study goal</h2></div><span class="panel-icon">✧</span></div>
+          <p class="panel-description">Choose a weekly focus target. Completed sessions in your weekly planner count towards it.</p>
+          <form id="goalForm" class="goal-form"><label for="goalHours">My target each week</label><div class="goal-input-row"><input id="goalHours" type="number" min="1" max="40" step="0.5" value="5"><span>hours</span><button type="submit" class="secondary-button">Save goal</button></div></form>
+          <div class="goal-progress-head"><span>This week's progress</span><strong id="goalProgressLabel">0 / 5 hours</strong></div><div class="progress-track goal-track"><div class="progress-fill" id="goalProgressFill"></div></div><p class="goal-encouragement" id="goalMessage">Plan a session to get started. Small steps count.</p>
+        </section>
+        <section class="panel analytics-panel" id="analytics">
+          <div class="panel-heading"><div><p class="eyebrow">LOOK BACK, MOVE FORWARD</p><h2>Your progress</h2></div><span class="panel-icon">↗</span></div>
+          <p class="panel-description">A snapshot of completed assignments and study sessions this week.</p>
+          <div class="analytics-summary"><div><strong id="analyticsTaskRate">0%</strong><span>Assignments completed</span></div><div><strong id="analyticsPlanCount">0</strong><span>Sessions completed</span></div></div>
+          <div class="mini-chart" id="weeklyChart" aria-label="Completed study minutes by day"></div><p class="chart-caption">Completed planned minutes · Monday to Sunday</p>
+        </section>
+      </div>
+      <section class="panel progress-detail-panel">
+        <div class="panel-heading"><div><p class="eyebrow">KEEP BUILDING MOMENTUM</p><h2>Your activity snapshot</h2></div><span class="panel-icon">✦</span></div>
+        <div class="progress-detail-grid">
+          <div><span class="stat-label">TOTAL ASSIGNMENTS</span><strong id="totalAssignments">0</strong></div>
+          <div><span class="stat-label">COMPLETED ASSIGNMENTS</span><strong id="doneAssignments">0</strong></div>
+          <div><span class="stat-label">FOCUS SESSIONS</span><strong id="focusSessions">0</strong></div>
+          <div><span class="stat-label">FOCUS TIME THIS WEEK</span><strong id="focusTime">0m</strong></div>
+        </div>
+      </section>
+
+      <footer class="page-footer">Nura <span>·</span> Learn. Focus. Grow. <span class="footer-right">Your progress, at your pace.</span></footer>
+    </section>
+  </main>
+</div>
+<script src="JS/storage.js"></script>
+<script src="JS/goals-progress.js"></script>
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#140040"><meta name="description" content="Plan your study week, manage assignments and build focus with Nura.">
+  <title>Assignments & focus | Nura</title><link rel="stylesheet" href="CSS/nura2.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html" aria-label="Nura overview"><span class="brand-mark">n</span><span><strong>Nura</strong><small>LEARN. FOCUS. GROW.</small></span></a>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav class="side-nav" aria-label="Workspace navigation">
+      <a class="side-link" href="index.html"><span class="nav-icon" aria-hidden="true">⌂</span>Overview</a>
+      <a class="side-link active" href="dashboard.html"><span class="nav-icon" aria-hidden="true">▦</span>Assignments &amp; focus</a>
+    </nav>
+    <div class="sidebar-label">YOUR TOOLS</div>
+    <nav class="side-nav" aria-label="Productivity tools">
+      <a class="side-link" href="#tasks"><span class="nav-icon" aria-hidden="true">☷</span>Assignments</a>
+      <a class="side-link" href="planner.html"><span class="nav-icon" aria-hidden="true">▦</span>Weekly planner</a>
+      <a class="side-link" href="#focus"><span class="nav-icon" aria-hidden="true">◷</span>Focus room</a>
+      <a class="side-link" href="goals-progress.html"><span class="nav-icon" aria-hidden="true">✧</span>Goals &amp; progress</a>
+      
+    </nav>
+    <div class="sidebar-label">LEARNING</div><nav class="side-nav" aria-label="Learning navigation"><a class="side-link" href="learning-centre.html"><span class="nav-icon" aria-hidden="true">✦</span>Learning centre</a><a class="side-link" href="resources.html"><span class="nav-icon" aria-hidden="true">▤</span>Resource library</a></nav>
+    <div class="sidebar-bottom"><div class="sidebar-note"><span class="note-spark">✦</span><strong>Small steps count.</strong><p>Progress happens one study session at a time.</p></div><div class="sidebar-meta"><span>NURA 2.1</span><a href="Pages/about.html">About Nura</a></div></div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="breadcrumb">Nura <span>/</span> Assignments & focus</div><div class="topbar-right"><span class="status-dot"></span><span>Saved on this device</span><div class="avatar">N</div></div></header>
+    <section class="page-content">
+      <div class="dashboard-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h1>Assignments &amp; focus</h1><p class="intro">Keep your assignments organised and make space for focused study.</p></div><div class="date-chip" id="todayLabel">YOUR STUDY SPACE</div></div>
+
+      <div class="stats-grid stats-grid-four">
+        <div class="stat-card"><span class="stat-label">OPEN ASSIGNMENTS</span><strong id="remainingCount">0</strong><span class="stat-foot">Still on your list</span></div>
+        <div class="stat-card"><span class="stat-label">COMPLETED</span><strong id="completedCount">0</strong><span class="stat-foot">Tasks you've finished</span></div>
+        <div class="stat-card"><span class="stat-label">FOCUS SESSIONS</span><strong id="sessionCount">0</strong><span class="stat-foot">Sessions completed</span></div>
+        <div class="stat-card"><span class="stat-label">FOCUS THIS WEEK</span><strong id="weeklyMinutes">0m</strong><span class="stat-foot">Time spent focusing</span></div>
+      </div>
+
+      <div class="dashboard-grid productivity-top-grid">
+        <section class="panel task-panel" id="tasks">
+          <div class="panel-heading"><div><p class="eyebrow">KEEP ON TRACK</p><h2>Assignment manager</h2></div><span class="panel-icon">☷</span></div>
+          <p class="panel-description">Add the details you need to stay on top of schoolwork.</p>
+          <form id="taskForm" class="task-form task-form-expanded">
+            <label class="sr-only" for="taskInput">Assignment name</label><input id="taskInput" type="text" maxlength="100" placeholder="Assignment or task name" required>
+            <div class="task-fields"><label><span>Subject</span><input id="taskSubject" type="text" maxlength="40" placeholder="e.g. Science"></label><label><span>Due date</span><input id="taskDue" type="date"></label><label><span>Priority</span><select id="taskPriority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select></label></div>
+            <button type="submit" class="primary-button">Add assignment <span>＋</span></button>
+          </form>
+          <div class="task-toolbar"><span class="list-caption" id="taskCountLabel">YOUR ASSIGNMENTS</span><label class="sr-only" for="taskFilter">Filter assignments</label><select id="taskFilter" class="compact-select"><option value="all">All tasks</option><option value="open">To do</option><option value="done">Completed</option></select></div>
+          <div class="task-list" id="taskList" aria-live="polite"><p class="empty-state">No assignments yet. Add one above to get started.</p></div>
+        </section>
+
+        <section class="panel focus-panel" id="focus">
+          <div class="panel-heading"><div><p class="eyebrow">ONE THING AT A TIME</p><h2>Focus room</h2></div><span class="panel-icon">◷</span></div>
+          <p class="panel-description">Choose a focus length and give one task your attention.</p>
+          <div class="timer-face"><div class="timer-ring"><span id="timerDisplay">25:00</span><small>FOCUS TIME</small></div></div>
+          <div class="timer-presets" role="group" aria-label="Timer length"><button class="preset active" data-minutes="25" type="button">25 min</button><button class="preset" data-minutes="15" type="button">15 min</button><button class="preset" data-minutes="5" type="button">5 min</button></div>
+          <div class="timer-actions"><button class="primary-button" id="startTimer" type="button">Start focus</button><button class="secondary-button" id="resetTimer" type="button">Reset</button></div>
+          <p class="timer-message" id="timerMessage" aria-live="polite">Ready when you are.</p>
+        </section>
+      </div>
+<footer class="page-footer">Nura <span>·</span> Learn. Focus. Grow. <span class="footer-right">Your progress, at your pace.</span></footer>
+    </section>
+  </main>
+</div>
+<script src="JS/storage.js"></script><script src="JS/app.js"></script>
+</body></html>
